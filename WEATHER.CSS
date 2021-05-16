@@ -1,0 +1,126 @@
+.box
+{
+    position: relative;
+    top: 7vw ;
+    left: 40vw;
+    width:20vw;
+    height:30vw;
+    background-color: rgb(25, 219, 210);
+    font: 1.5vw bold ;
+    border-radius: 1vw;
+    font-family: "comic sans ms";
+    text-align: center;
+    overflow: hidden;
+}
+#weather_icon
+{
+    width: 20vw;
+    height: 9vw;
+    border-radius: 1vw;
+    align-items: center;
+    padding-top: 4vw;
+}
+#weather_icon i
+{
+   animation: big 2s linear infinite alternate;
+}
+@keyframes big{
+   from{
+       transform: scale(1.2);
+   }
+   to{
+       transform: scale(1.6);
+   }
+}
+#info
+{
+    background-color: rgb(77, 176, 241);
+    width: 20vw;
+    position: absolute;
+    top:16vw;
+    height: 15vw;
+}
+.wave-1,.wave-2,.wave-3
+{
+    width: 20vw;
+    height: 3vw;
+    position: absolute;
+    background: url("paint1.png");
+    background-size: 100%;
+}
+.wave-1{
+    animation: travel1 2s linear infinite;
+    z-index:1000;
+}
+.wave-2{
+    animation: travel2 2s linear infinite;
+    z-index:1000;
+    opacity: 0.5;
+    animation-delay: -2s;
+
+}
+.wave-3{
+    animation: travel2 2s linear infinite;
+    z-index:1000;
+    opacity: 0.2;
+    animation-delay: -1s;
+}
+@keyframes travel1
+{
+    from{
+        background-position-x: 0;
+    }
+    to{
+        background-position-x: 20vw;
+    }
+}
+@keyframes travel2
+{
+    from{
+        background-position-x: 20vw;
+    }
+    to{
+        background-position-x: 0vw;
+    }
+}
+@keyframes travel3
+{
+    from{
+        background-position-x: 10vw;
+    }
+    to{
+        background-position-x: 20vw;
+    }
+}
+.fa-street-view
+{
+    animation: move 1s linear infinite alternate;
+}
+@keyframes move
+{
+    from{
+        transform: translateX(-0.5vw);
+    }
+    to{
+        transform: translateX(0.5vw);
+    }
+}
+#location
+{
+    font-size: 2vw;
+    font-weight: bold;
+}
+#date
+{
+    font-size: 1vw;
+}
+.temp
+{
+    font-size:2vw;
+    font-weight: bold;
+}
+.min_max
+{
+    font-size: 1vw;
+    margin-top: 1vw;
+}
