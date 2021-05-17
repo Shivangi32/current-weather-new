@@ -23,16 +23,28 @@ const replaceval = (tempval,objdata)=>
 
 const server=http.createServer((req,res) =>
 {
-    requests("http://api.openweathermap.org/data/2.5/weather?q=DELHI&appid=5afb5d69516b16834373df5f9568805a")
-    .on('data', function (chunk) {
-     var objdata=JSON.parse(chunk);
-     const realtimedata=replaceval(homefile,objdata);
-     res.write(realtimedata);
-     })
-    .on('end', function (err) {
-    if (err) return err;
-    res.end();
-});
+    if(req.url=="/home.html" || req.url=="/"){
+       requests("http://api.openweathermap.org/data/2.5/weather?q=DELHI&appid=5afb5d69516b16834373df5f9568805a")
+       .on('data', function (chunk) {
+           var objdata=JSON.parse(chunk); 
+           const realtimedata=replaceval(homefile,objdata);
+           res.write(realtimedata);
+        })//data close
+       .on('end', function (err) {
+           if (err) return err;
+           res.end();
+        });//requestsclose
+    }
+    else if(req.url=="/WEATHER.CSS"){
+        fs.readFile("WEATHER.CSS","utf-8",(data,err)=>
+        {
+            if(err) console.log(err);
+            res.writeHead(200,{'Content-type':'text/css'});
+            res.write(data);
+            console.log(data);
+            res.end();
+        });
+    }
 });
 
 server.listen(2000,"localhost",()=>
