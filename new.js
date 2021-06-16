@@ -20,6 +20,7 @@ const replaceval = (tempval,objdata)=>
     temp=temp.replace("{%country%}",objdata.sys.country);
     temp=temp.replace("{%location%}",objdata.name);
     temp=temp.replace("{%tempstatus%}",objdata.weather[0].main);
+    console.log(objdata.weather[0].main);
     return temp;
 }
 
