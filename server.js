@@ -25,7 +25,15 @@ const replaceval = (tempval,objdata)=>
 }
 
 app.get("/",(req,res)=>{
-    requests("http://api.openweathermap.org/data/2.5/weather?q=DELHI&appid=5afb5d69516b16834373df5f9568805a")
+    var country=req.query.search;
+    if(typeof(country)=="undefined")
+      country="DELHI";
+    var url="http://api.openweathermap.org/data/2.5/weather?q=";
+    country=country.replace(" ","%20");
+    url+=country.toUpperCase();
+    url+="&appid=5afb5d69516b16834373df5f9568805a";
+    console.log(url);
+    requests(url)
        .on('data', function (chunk) {
            var objdata=JSON.parse(chunk); 
            const realtimedata=replaceval(homefile,objdata);

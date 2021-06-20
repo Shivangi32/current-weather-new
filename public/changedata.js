@@ -11,15 +11,15 @@ var currdate=document.getElementById("date");
         weathercon.innerHTML="<i class='fas fa-cloud fa-3x' style='color: aliceblue'></i>";
         document.body.style.backgroundImage="url('clouds.jpg')";
     }
-    else if(tempStatus=="Rainy")
+    else if(tempStatus=="Rain")
     {
         weathercon.innerHTML="<i class='fas fa-cloud-rain fa-3x' style='color: rgb(0, 132, 255)'></i>";
         document.body.style.backgroundImage="url('rainy.jpg')";
     }
     else if(tempStatus=="Haze")
     {
-        weathercon.innerHTML="<i class='fas fa-cloud-sun fa-3x' style='color: rgba(249, 253, 4, 0.87)'></i>";
-        document.body.style.backgroundImage="url('haze.jpg')";
+        weathercon.innerHTML="<i class='fas fa-cloud fa-3x' style='color: rgba(2, 22, 254, 0.87)'></i>";
+        document.body.style.backgroundImage="url('haze.jfif')";
     } 
     console.log(tempStatus);
     var months = [
