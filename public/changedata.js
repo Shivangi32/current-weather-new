@@ -18,7 +18,7 @@ var currdate=document.getElementById("date");
     }
     else if(tempStatus=="Haze")
     {
-        weathercon.innerHTML="<i class='fas fa-cloud fa-3x' style='color: rgba(2, 22, 254, 0.87)'></i>";
+        weathercon.innerHTML="<i class='fas fa-cloud fa-3x' style='color: rgb(0, 132, 255)''></i>";
         document.body.style.backgroundImage="url('haze.jfif')";
     } 
     console.log(tempStatus);
