@@ -26,7 +26,7 @@ const replaceval = (tempval,objdata)=>
 
 app.get("/",(req,res)=>{
     var country=req.query.search;
-    if(typeof(country)=="undefined")
+    if(country=="")
       country="DELHI";
     var url="http://api.openweathermap.org/data/2.5/weather?q=";
     country=country.replace(" ","%20");
